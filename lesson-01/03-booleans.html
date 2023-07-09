@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>booleans</title>
+  </head>
+  <body>
+    <!---------------------BOOLEANS----------------------------->
+    <!--Booleans values are (true, false)-->
+
+
+    <script>
+      /*  if(5 > 10){
+            console.log('true')
+        }else{
+            console.log('false')
+        }
+        
+
+        const cart =7;
+       if(cart){
+        console.log(`cart is not empty`)
+       }else{
+        console.log('cart is empty')
+       }
+
+       console.log(!0);
+       */
+
+      /////////////////////////////////////////////////////////////
+      //OPERATORS AND SHORTCUTS
+
+      //#ternary operator '?' are shortcuts to if and else statememts
+      const result = 0 ? "truthy" : "falsy";
+      console.log(result);
+
+      //#Guard operator '&&', it stops the statement if the first value is false
+      false && console.log("hello");
+
+      const message = false && "hello";
+      console.log(message);
+
+      //Default operator '||',
+      //let's say we want to write a programm that choses currencies and we want to make a particular currency default if the user doesn't chose any.
+      //this programm below will chose 'USD' by default if the user inputs nothing and choose a different currency if the user inputs a valid currency.
+      const currency = "EUR" || "USD";
+      console.log(currency);
+    </script>
+  </body>
+</html>

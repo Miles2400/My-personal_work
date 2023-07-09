@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<!--------------------FUNCTIONS----------------------------->
+
+<!--
+    A function lets us reuse a particular piece of code multiple times .
+-->
+<body>
+
+
+    <script>
+       /* 
+        function fun1() {
+            console.log('hello');
+            console.log(2+2);
+        }
+        fun1();
+        */
+
+
+//////////////////PARAMETERS//////////////////////
+
+//parameters are used to input a value into a function.
+//NOTE: A function cam have more than one parameter.
+
+//In the example below, the function 'calculateTax' takes two parameters 'cost' and 'taxPrecent' as input.
+
+//NOTE; you can assign a default value to parameters if you dont want to pass them a value initially, just like we did below "= 0.1".
+
+function calculateTax(cost, taxPercent = 0.1){
+    console.log(cost * taxPercent);
+}
+
+//We called the function "calculateTax" and passed it an argument or value "4000", it will execute the argument and display it in our console.
+
+calculateTax(4000, 0.2); 
+calculateTax(5000);
+
+
+
+
+    </script>
+</body>
+</html>
