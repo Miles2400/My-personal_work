@@ -1,134 +1,115 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Cart</title>
-  </head>
 
-  <body>
-    <style>
-      button {
-        background-color: aqua;
-        color: brown;
-        border: 1px dashed brown;
-        padding: 10;
-				font-family: cursive;
-				font-weight: 800;
-        width: auto;
-        border-radius: 10px;
-      }
-      button:hover {
-        background-color: brown;
-        color: aqua;
-        border-color: aqua;
-        cursor: pointer;
-      }
-      button:active {
-        background-color: blueviolet;
-        color: bisque;
-        border-color: aqua;
-      }
-    </style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart</title>
+</head>
 
-    <!------------------------------------------------------>
+<body>
+  <style>
+    button {
+      background-color: aqua;
+      color: brown;
+      border: 1px dashed brown;
+      padding: 10;
+      font-family: cursive;
+      font-weight: 800;
+      width: auto;
+      border-radius: 10px;
+    }
 
-    <button
-      onclick="
-      alert(`Cart : ${cartQuantity}`);
+    button:hover {
+      background-color: brown;
+      color: aqua;
+      border-color: aqua;
+      cursor: pointer;
+    }
+
+    button:active {
+      background-color: blueviolet;
+      color: bisque;
+      border-color: aqua;
+    }
+  </style>
+
+  <!------------------------------------------------------>
+
+  <button onclick="
+      alert(`Cart quantity: ${cartQuantity}`);
     if(cartQuantity <= 10){
         console.log(`cart quantity: ${cartQuantity}`)
     }else if(cartQuantity == 10){
 
     }
-        "
-    >
-      cart quantity
-    </button>
+        ">
+    cart quantity
+  </button>
 
-    <button
-      onclick="
-    cartQuantity += 1;
-    if(cartQuantity <= 10){
-        console.log(`cart quantity: ${cartQuantity}`)
-    }else if(cartQuantity >= 10){
-        alert('The cart has full');
-        cartQuantity = 10;
-    }
-    "
-    >
-      Add to cart
-    </button>
+  <button onclick="
+updateCartQuantity(1)
+    ">
+    Add to cart
+  </button>
 
-    <button
-      onclick="
-    cartQuantity += 2;
-    if(cartQuantity <= 10){
-        console.log(`cart quantity: ${cartQuantity}`)
-    }else if(cartQuantity >= 10){
-        alert('The cart has full');
-        cartQuantity = 10;
-    }
-    "
-    >
-      +2
-    </button>
+  <button onclick="
+  updateCartQuantity(2)
+    ">
+    +2
+  </button>
 
-    <button
-      onclick="
-    cartQuantity += 3;
-    if(cartQuantity <= 10){
-        console.log(`cart quantity: ${cartQuantity}`)
-    }else if(cartQuantity >= 10){
-        alert('The cart has full');
-        cartQuantity = 10;
-    }
-    "
-    >
-      +3
-    </button>
+  <button onclick="
+   updateCartQuantity(3)
+    ">
+    +3
+  </button>
 
-    <button
-      onclick="
+  <button onclick="
     cartQuantity = 0;
     console.log(`cart was reset.`)
     console.log(`cart quantity: ${cartQuantity}`)
-    "
-    >
-      Reset cart
-    </button>
+    ">
+    Reset cart
+  </button>
 
-    <button
-      onclick="
-    cartQuantity -=1;
-    if(cartQuantity >= 0){
+  <button onclick="
+    removeFromCart(1)
+    ">
+    Remove from cart
+  </button>
+
+  <button onclick="
+   removeFromCart(2)
+    ">
+    -2
+  </button>
+
+  <!---------------JAVASRCIRT-->
+
+  <script>
+    let cartQuantity = 0;
+
+    function updateCartQuantity(value) {
+      cartQuantity += value;
+      if (cartQuantity <= 10) {
         console.log(`cart quantity: ${cartQuantity}`)
-    }else if(cartQuantity < 1){
+      } else if (cartQuantity >= 10) {
+        alert('The cart has full');
+        cartQuantity = 10;
+      }
+    }
+
+    function removeFromCart(item) {
+      cartQuantity -= item;
+      if (cartQuantity >= 0) {
+        console.log(`cart quantity: ${cartQuantity}`)
+      } else if (cartQuantity < 1) {
         alert('Not enough items');
         cartQuantity = 0;
+      }
+
     }
-    "
-    >
-      Remove from cart
-    </button>
+  </script>
+</body>
 
-    <button
-      onclick="
-    cartQuantity -=2;
-    if(cartQuantity >= 0){
-        console.log(`cart quantity: ${cartQuantity}`)
-    }else if(cartQuantity < 1){
-        alert('Not enough items');
-        cartQuantity = 0;
-    }
-    "
-    >
-      -2
-    </button>
-
-    <!---------------JAVASRCIRT-->
-
-    <script>
-      let cartQuantity = 0;
-    </script>
-  </body>
 </html>
