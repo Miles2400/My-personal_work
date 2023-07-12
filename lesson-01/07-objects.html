@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+    <!-----OBJECTS------>
+
+    <!--An object is a varible that can be used to groups multiple values together, it is mostly used in the grouping of similar values.
+    -->
+
+    <!--In the example below, "product" is an object containing two "properties" (name and price), with the "values" of (socks and 1090).
+
+    Note; in objects we use full colon ':' instead of semi-colon ';'
+
+    To access a value in an object, we call the object with a dot '.' then specify the property.
+
+    We can still manupulate the values or properties .
+    For the property, if we want to change, add or remove;For adding, we will call the object with the property then use the dot '.' then assign the new value with the assignment operator "=", For removing, we will  
+    -->
+
+		<!--
+			There are two ways we can declare or manuplate an object property which are; Dot Notation and Bracket Notation.
+		-->
+
+
+    <script>
+
+			/*
+			In this example used the dot notation.
+			*/
+
+        /*const product = {
+            name: 'socks',
+            price: 1090
+        };
+
+        console.log(product);
+        console.log(product.name);
+        console.log(product.price);
+
+        product.name = 'cotton socks';
+        console.log(product);
+
+        product.newProperty = 'sweater';
+        console.log(product);
+
+        delete product.newProperty;
+        console.log(product);
+*/
+
+/***********************************************************************/
+
+				/*
+				We can use the bracket notation in an object, wheather to add, remove or manupulate.
+
+				The bracket notation lets us use property names that does not work with the dot notation.
+				*/
+				const product2 = {
+					name: 'shirt',
+					['delivery-time']: '1 day'
+				}
+
+				console.log(product2);
+				console.log(product2.name);
+				console.log(product2['name']);
+				console.log(product2['delivery-time']);
+    </script>
+</body>
+
+</html>
