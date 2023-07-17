@@ -92,45 +92,19 @@
 
     <script>
 
-        let calculation = '';
-        let result;
-        function updatecalculation(sum) {
-            if (sum == 1) {
-                result = calculation += 1;
-                console.log(result)
-            } else if (sum == 2) {
-                result = calculation += 2;
-                console.log(result);
-            } else if (sum == 3) {
-                result = calculation += 3;
-                console.log(result);
-            } else if (sum == 4) {
-                result = calculation += 4;
-                console.log(result);
-            } else if (sum == 5) {
-                result = calculation += 5;
-                console.log(result);
-            } else if (sum == 6) {
-                result = calculation += 6;
-                console.log(result);
-            } else if (sum == 7) {
-                result = calculation += 7;
-                console.log(result);
-            } else if (sum == 8) {
-                result = calculation += 8;
-                console.log(result);
-            } else if (sum == 9) {
-                result = calculation += 9;
-                console.log(result);
-            } else if (sum == '+') {
-                result = calculation += '+'
-                console.log(result);
-            }
+        
+   
 
-           /* calculation += sum;
-            console.log(calculation);*/
+        let calculation =  localStorage.getItem('store');
+        function updatecalculation(sum) {
+           
+            calculation += sum;
+            console.log(calculation);
         }
 
+       
+        localStorage.setItem('store',(calculation));
+       
 
     </script>
 </body>

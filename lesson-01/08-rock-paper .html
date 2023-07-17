@@ -5,6 +5,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Rock paper scissors</title>
 </head>
+<style>
+	body {
+		background-color: black;
+	}
+
+	button {
+		background-color: rgb(14, 14, 168);
+		color: gold;
+		border: 2px dotted gold;
+		border-radius: 10px;
+		padding: 10px;
+		font-family: cursive;
+		margin-left: 8;
+	}
+
+	button:hover {
+		background-color: rgb(236, 205, 26);
+		color: rgb(6, 6, 143);
+		border: 2px dotted rgb(6, 6, 88);
+	}
+
+	p {
+		color: gold;
+		margin-left: 15;
+		padding: 5;
+		font-family: cursive;
+		font-style: italic;
+		font-weight: 800;
+		font-size: 20px;
+	}
+</style>
 
 <body>
 	<p>Rock Paper scissors</p>
@@ -22,7 +53,7 @@
     scores.Losses = 0;
     scores.Ties = 0;
     scores.Wins = 0;
-
+		localStorage.removeItem('score');
 		alert('Scores has been reset');
     ">
 		Reset scores</button>
@@ -30,11 +61,24 @@
 	<!------------------------------------------------------------->
 	<script>
 
-		const scores = {
-			Wins: 0,
-			Losses: 0,
-			Ties: 0,
-		};
+		let scores = JSON.parse(localStorage.getItem('score')) || {
+				Losses: 0,
+				Ties: 0,
+				Wins: 0,
+
+			};
+
+	/*		
+		if (!scores) {
+			scores = {
+				Losses: 0,
+				Ties: 0,
+				Wins: 0,
+
+			}
+		}
+*/
+
 
 		//////////////////COMPUTER MOVES///////////////////////////
 
@@ -97,9 +141,14 @@
 				scores.Ties += 1;
 			}
 
+			localStorage.setItem('score', JSON.stringify(scores));
+
 			alert(
 				`You picked ${playerMove}. Computer picked ${computerMove}. ${result}.
-Wins: ${scores.Wins} , Losses: ${scores.Losses} , Ties: ${scores.Ties}`);
+Wins: ${scores.Wins}, Losses: ${scores.Losses} , Ties: ${scores.Ties}`);
+
+
+
 		}
 	</script>
 </body>

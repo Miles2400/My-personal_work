@@ -12,14 +12,14 @@
     <!--An object is a varible that can be used to groups multiple values together, it is mostly used in the grouping of similar values.
     -->
 
-    <!--In the example below, "product" is an object containing two "properties" (name and price), with the "values" of (socks and 1090).
+    <!--In the example below, "product" is an object containing two "properties" (name and price), which has the "values" of (socks and 1090).
 
     Note; in objects we use full colon ':' instead of semi-colon ';'
 
     To access a value in an object, we call the object with a dot '.' then specify the property.
 
     We can still manupulate the values or properties .
-    For the property, if we want to change, add or remove;For adding, we will call the object with the property then use the dot '.' then assign the new value with the assignment operator "=", For removing, we will  
+    For the property, if we want to change, add or remove;For adding, we will call the object with the property then use the dot '.' to assign the new value with the assignment operator "=", For removing, we will use the keyword 'delete' then call the object and specify the property.
     -->
 
 		<!--
@@ -59,15 +59,49 @@
 
 				The bracket notation lets us use property names that does not work with the dot notation.
 				*/
-				const product2 = {
-					name: 'shirt',
-					['delivery-time']: '1 day'
-				}
 
-				console.log(product2);
+                /*
+                Objects can have what we call 'METHODS', this is when a function is stored as a property in an object or when we have a property containing function.
+                To use or declare the method, we call the objectname followed by the porperty name.
+                */
+
+
+
+				/*const product2 = {
+					name: 'shirt',
+					['delivery-time']: '1 day',
+                    rating: {
+                        stars: 4.5,
+                        count: 87
+                    },
+                    fun: function function1(){
+                        console.log('function inside an object') 
+                    }
+				}
+*/
+
+			/*	console.log(product2);
 				console.log(product2.name);
 				console.log(product2['name']);
 				console.log(product2['delivery-time']);
+
+                console.log(product2.rating);
+                console.log(product2.rating.count);
+
+             
+*/
+                  //  product2.fun();
+
+            
+
+
+                //console.log(JSON.stringify(product2));
+                //console.log(JSON.parse(JSON.stringify(product2)));
+
+                
+
+            
+
     </script>
 </body>
 

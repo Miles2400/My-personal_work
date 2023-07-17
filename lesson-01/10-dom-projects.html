@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <p>Youtube Subscribe Button</p>
+
+    <button onclick="Subscribe();" class="js-sub-btn">
+      Subscribe
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+
+    <input placeholder="Cost of order" class="js-costInput" onkeydown="costKeyDown(event)" />
+
+    <button onclick="costOfItem();">calculate</button>
+
+    <p class="js-total-cost"></p>
+  </body>
+
+  <script>
+    //Number() is a function that converts a string to a number.
+
+    function costKeyDown(event) {
+      if (event.key === "Enter") {
+        costOfItem();
+      }
+    }
+
+    function costOfItem() {
+      const input = document.querySelector(".js-costInput");
+      let cost = Number(input.value);
+      if (cost <= 40) {
+        cost = cost + 10;
+      }
+      document.querySelector(".js-total-cost").innerHTML = `Total: $${cost}`;
+    }
+
+    function Subscribe() {
+      const buttonElem = document.querySelector(".js-sub-btn");
+      if (buttonElem.innerHTML === "Subscribe") {
+        buttonElem.innerHTML = "Subscribed";
+      } else {
+        buttonElem.innerHTML = "Subscribe";
+      }
+    }
+
+
+
+
+
+
+  </script>
+
+</html>
