@@ -1,38 +1,3 @@
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock paper scissors</title>
-  </head>
-
-  <body>
-    <p>Rock Paper scissors</p>
-
-    <button onclick="playGame('rock'); ">
-      Rock</button>
-
-    <button onclick="playGame('paper'); ">
-      Paper</button>
-
-    <button onclick="playGame('scissors'); ">
-      scissors</button>
-    <p class="js-result"></p>
-    <p class="js-moves"></p>
-    <p class="js-score"></p>
-
-
-    <button onclick="
-    scores.Losses = 0;
-    scores.Ties = 0;
-    scores.Wins = 0;
-		localStorage.removeItem('score');
-		updateScoreElem();
-    ">
-      Reset scores</button>
-
-    <!------------------------------------------------------------->
-    <script>
 
       let scores = JSON.parse(localStorage.getItem('score')) || {
         Losses: 0,
@@ -77,7 +42,7 @@
 
       function playGame(playerMove) {
 
-        const computerMove = pickComputerMove();
+        let computerMove = pickComputerMove();
         let result = "";
 
         if (playerMove === "scissors") {
@@ -122,7 +87,8 @@
         updateScoreElem();
 
         document.querySelector('.js-result').innerHTML = result;
-        document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`
+
+        document.querySelector('.js-moves').innerHTML = `You <img src="../image/${playerMove}-emoji.png"> <img src="../image/${computerMove}-emoji.png" > Computer`
 
 
       }
@@ -133,9 +99,3 @@
 
       }
 
-
-
-    </script>
-  </body>
-
-</html>

@@ -1,0 +1,102 @@
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>My Cart</title>
+   </head>
+
+   <body>
+      <!------------------------------------------------------>
+
+      <button onclick="
+   cart();
+        ">
+         cart quantity
+      </button>
+
+      <button onclick="
+updateCartQuantity(1)
+    ">
+         Add to cart
+      </button>
+
+      <button onclick="
+  updateCartQuantity(2)
+    ">
+         +2
+      </button>
+
+      <button onclick="
+   updateCartQuantity(3)
+    ">
+         +3
+      </button>
+
+      <button onclick="
+  reset();
+    ">
+         Reset cart
+      </button>
+
+      <button onclick="
+    removeFromCart(1)
+    ">
+         Remove from cart
+      </button>
+
+      <button onclick="
+   removeFromCart(2)
+    ">
+         -2
+      </button>
+      <p class="prag"></p>
+      <p class="cart-quant"></p>
+      <!---------------JAVASRCIRT-->
+
+      <script>
+         let cartQuantity = 0;
+
+         document.querySelector(
+            ".cart-quant"
+         ).innerHTML = `Cart quantity: ${cartQuantity}`;
+
+         function updateCartQuantity(value) {
+            cartQuantity += value;
+            if (cartQuantity <= 10) {
+               document.querySelector(
+                  ".cart-quant"
+               ).innerHTML = `Cart quantity: ${cartQuantity}`;
+            } else if (cartQuantity >= 10) {
+               document.querySelector(".cart-quant").innerHTML = "The cart has full";
+               cartQuantity = 10;
+            }
+         }
+
+         function removeFromCart(item) {
+            cartQuantity -= item;
+            if (cartQuantity >= 0) {
+               document.querySelector(
+                  ".cart-quant"
+               ).innerHTML = `Cart quantity: ${cartQuantity}`;
+            } else if (cartQuantity < 1) {
+               document.querySelector(".cart-quant").innerHTML = "Not enough items";
+               cartQuantity = 0;
+            }
+         }
+
+         function cart() {
+            document.querySelector(
+               ".cart-quant"
+            ).innerHTML = `Cart quantity: ${cartQuantity}`;
+         }
+
+         function reset() {
+            cartQuantity = 0;
+            alert(`cart was reset.`);
+            document.querySelector(".cart-quant").innerHTML = `Cart quantity: ${cartQuantity}`;
+         }
+      </script>
+   </body>
+
+</html>

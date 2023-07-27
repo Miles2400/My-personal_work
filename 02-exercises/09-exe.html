@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+   </head>
+
+   <body>
+      <button class="btn-head" onclick="choseHT('head')">head</button>
+      <button class="btn-tail" onclick="choseHT('tail')">tail</button>
+      <p class="prag"></p>
+      <script>
+        
+         function choseHT(choice) {
+            if(choice === 'head'){
+                document.querySelector('.prag').innerHTML   = `you chose: head`;
+            }else if(choice === 'tail'){
+               document.querySelector('.prag').innerHTML =`you chose: tail`;
+            }
+         }
+         
+
+      </script>
+   </body>
+
+</html>

@@ -7,18 +7,60 @@
     <title>Document</title>
   </head>
 
+
+<style>
+  body{
+    font-family: sans-serif;
+  }
+.subscribe-btn{
+  border: none;
+  background-color: rgb(0,0,0);
+  color: white;
+  height: 35px;
+  width: 95px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+input{
+  height: 32px;
+  width: 200px;
+}
+.cal-btn
+{
+height: 38px;
+width: 90px;
+border: none;
+background-color:rgb(0,128,0);
+color: white;
+cursor: pointer;
+font-weight: 500;
+}
+.sub-scribed{
+  background-color: rgb(243, 241, 241);
+  color: black;
+}
+
+</style>
   <body>
     <p>Youtube Subscribe Button</p>
 
-    <button onclick="Subscribe();" class="js-sub-btn">
+    <button onclick="Subscribe();" class="js-sub-btn subscribe-btn">
       Subscribe
     </button>
 
     <p>Amazon Shipping Calculator</p>
 
+    <p>Orders under $40 = +$10</p>
+    <p>Orders over $40 = Free shipping.
+
+    </p>
+
     <input placeholder="Cost of order" class="js-costInput" onkeydown="costKeyDown(event)" />
 
-    <button onclick="costOfItem();">calculate</button>
+    <button onclick="costOfItem();"  class=cal-btn>Calculate</button>
 
     <p class="js-total-cost"></p>
   </body>
@@ -36,7 +78,7 @@
       const input = document.querySelector(".js-costInput");
       let cost = Number(input.value);
       if (cost <= 40) {
-        cost = cost + 10;
+        cost = Math.ceil(cost + 10);
       }
       document.querySelector(".js-total-cost").innerHTML = `Total: $${cost}`;
     }
@@ -45,11 +87,12 @@
       const buttonElem = document.querySelector(".js-sub-btn");
       if (buttonElem.innerHTML === "Subscribe") {
         buttonElem.innerHTML = "Subscribed";
+        buttonElem.classList.add('sub-scribed');
       } else {
         buttonElem.innerHTML = "Subscribe";
+        buttonElem.classList.remove('sub-scribed');
       }
     }
-
 
 
 

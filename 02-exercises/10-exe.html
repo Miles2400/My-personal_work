@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<input type="text" class="input-elem" onkeydown="keydown(event)" onkeyup="keyup()"
+			placeholder="Enter your name " />
+		<button class="sub-mit" onclick="inputFun()">Submit</button>
+		<p class="prag2"></p>
+		<p class="prag"></p>
+
+		<script>
+			function inputFun() {
+				let text = document.querySelector(".input-elem").value;
+				document.querySelector(".prag").innerHTML = `Your name is: ${text}`;
+			}
+
+			function keydown(event) {
+				if (event.key === "Enter") {
+					inputFun();
+				}
+			}
+
+			function keyup() {
+				let elem = document.querySelector('.prag2').innerHTML = document.querySelector(".input-elem").value;
+			}
+
+		</script>
+	</body>
+
+</html>
