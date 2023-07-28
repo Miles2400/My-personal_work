@@ -88,7 +88,7 @@
 
         document.querySelector('.js-result').innerHTML = result;
 
-        document.querySelector('.js-moves').innerHTML = `You <img src="../image/${playerMove}-emoji.png"> <img src="../image/${computerMove}-emoji.png" > Computer`
+        document.querySelector('.js-moves').innerHTML = `You <img src="../06-image/${playerMove}-emoji.png"> <img src="../06-image/${computerMove}-emoji.png" > Computer`
 
 
       }

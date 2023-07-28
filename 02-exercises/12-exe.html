@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-</head>
 
-<style>
-   body{
-      background-color: gray;
-   }
-   .btn1{
-      background-color: rgb(255, 216, 20);
-      border: none;
-      padding: 5px 30px;
-      border-radius: 15px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 700;
-   }
-   .btn2{
-      background-color: black;
-      color: white;
-      padding: 8px 15px;
-      border: none;
-      border-radius: 5px;
-   }
-   .btn3{
-      background-color: rgb(230, 230, 230);
-      border: none;
-      padding: 8px 15px;
-      border-radius: 5px;
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+   </head>
+
+   <style>
+      body {
+         background-color: gray;
       }
-</style>
-<body>
-   <button class="btn1">Add to cart</button>
-   <button class="btn2">Request now</button>
-   <button class="btn3">Schedule for later</button>
-   <button class="js-btn">test</button>
+
+      
+      .is-toggled {
+         background-color: black;
+         color: white;
+         padding: 8px 15px;
+         border: none;
+         border-radius: 5px;
+      }
+      .toggled{
+          background-color: rgb(230, 230, 230);
+         border: none;
+         padding: 8px 15px;
+         border-radius: 5px;
+         color: black;
+      
+      }
+   </style>
+
+   <body>
+      
+      <button class="is-toggled js-btn1" onclick="toggle('.js-btn1')">Gaming</button>
+
+      <button onclick="toggle('.js-btn2')" class="is-toggled js-btn2" >Music</button>
+      
+      <button class="is-toggled js-btn3" onclick="toggle('.js-btn3')">Tech</button>
 
 
-   <script>
-const button = document.querySelector('.js-btn');
-console.log(button.classList.contains('.js-btn'));
-   </script>
+
+      <script>
+
+
+         function toggle(selector) {
+            let btn = document.querySelector(selector);
+            if(btn.classList.contains('is-toggled')){
+               btn.classList.remove('is-toggled')
+               btn.classList.add('toggled')
+            }else{
+               btn.classList.remove('toggled')
+               btn.classList.add('is-toggled')
+            }
+
+         }
+   
+      </script>
+
 </html>

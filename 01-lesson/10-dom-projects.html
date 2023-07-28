@@ -8,42 +8,50 @@
   </head>
 
 
-<style>
-  body{
-    font-family: sans-serif;
-  }
-.subscribe-btn{
-  border: none;
-  background-color: rgb(0,0,0);
-  color: white;
-  height: 35px;
-  width: 95px;
-  border-radius: 20px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-bottom: 40px;
-}
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+    }
 
-input{
-  height: 32px;
-  width: 200px;
-}
-.cal-btn
-{
-height: 38px;
-width: 90px;
-border: none;
-background-color:rgb(0,128,0);
-color: white;
-cursor: pointer;
-font-weight: 500;
-}
-.sub-scribed{
-  background-color: rgb(243, 241, 241);
-  color: black;
-}
+    .subscribe-btn {
+      border: none;
+      background-color: rgb(0, 0, 0);
+      color: white;
+      height: 35px;
+      width: 95px;
+      border-radius: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 40px;
+    }
 
-</style>
+    input {
+      height: 32px;
+      width: 200px;
+      
+    }
+
+    .cal-btn {
+      height: 38px;
+      width: 90px;
+      border: none;
+      background-color: rgb(0, 128, 0);
+      color: white;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .sub-scribed {
+      background-color: rgb(243, 241, 241);
+      color: black;
+    }
+
+    .prag2 {
+      color: red;
+    }
+  </style>
+
   <body>
     <p>Youtube Subscribe Button</p>
 
@@ -60,7 +68,7 @@ font-weight: 500;
 
     <input placeholder="Cost of order" class="js-costInput" onkeydown="costKeyDown(event)" />
 
-    <button onclick="costOfItem();"  class=cal-btn>Calculate</button>
+    <button onclick="costOfItem();" class=cal-btn>Calculate</button>
 
     <p class="js-total-cost"></p>
   </body>
@@ -77,10 +85,19 @@ font-weight: 500;
     function costOfItem() {
       const input = document.querySelector(".js-costInput");
       let cost = Number(input.value);
-      if (cost <= 40) {
-        cost = Math.ceil(cost + 10);
-      }
-      document.querySelector(".js-total-cost").innerHTML = `Total: $${cost}`;
+
+      if (cost <= 0) {
+        document.querySelector(".js-total-cost").classList.add('prag2');
+        document.querySelector(".js-total-cost").innerHTML = 'Error: cost cannot be less than $0'
+      } else if (cost <= 40) {
+        cost =(cost + 10);
+        document.querySelector(".js-total-cost").classList.remove('prag2');
+        document.querySelector(".js-total-cost").innerHTML = `Total: $${cost}`;
+      } else{cost = cost;
+         document.querySelector(".js-total-cost").classList.remove('prag2');
+       document.querySelector(".js-total-cost").innerHTML = `Total: $${cost}`;
+      };
+
     }
 
     function Subscribe() {
@@ -93,10 +110,6 @@ font-weight: 500;
         buttonElem.classList.remove('sub-scribed');
       }
     }
-
-
-
-
 
   </script>
 
