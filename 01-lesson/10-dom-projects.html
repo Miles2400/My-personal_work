@@ -83,12 +83,13 @@
     }
 
     function costOfItem() {
-      const input = document.querySelector(".js-costInput");
+      let input = document.querySelector(".js-costInput");
       let cost = Number(input.value);
 
       if (cost <= 0) {
         document.querySelector(".js-total-cost").classList.add('prag2');
-        document.querySelector(".js-total-cost").innerHTML = 'Error: cost cannot be less than $0'
+             document.querySelector(".js-total-cost").innerHTML = 'Error: cost cannot be less than $0'
+     
       } else if (cost <= 40) {
         cost =(cost + 10);
         document.querySelector(".js-total-cost").classList.remove('prag2');

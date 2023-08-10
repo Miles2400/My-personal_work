@@ -27,15 +27,13 @@
 
 
     <button onclick="
-    scores.Losses = 0;
-    scores.Ties = 0;
-    scores.Wins = 0;
-		localStorage.removeItem('score');
-		updateScoreElem();
+    resetScores()
     " class="resetBtn">
       Reset scores</button>
 
-    <!------------------------------------------------------------->
+      <button class="js-autoplay-btn" onclick="autoPlay()">Auto play</button>
+
+    
     <script src="../04-scripts/11-rock-paper.js"></script>
 
   </body>

@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Todo List</title>
-</head>
-<body>
 
-   <p>Todo List</p>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Todo List</title>
+      <link rel="stylesheet" href="../05-styles/13-todo-list.css">
+   </head>
 
-   <input type="text" placeholder="Todo name" class="js-todo-input">
+   <body>
 
-   <button onclick="addTodo()">Add</button>
+      <p>Todo List</p>
+      <div class="div">
+         <input type="text" placeholder="Todo name" class="js-todo-input input1">
+         <input type="date" class="js-due-date-input input2">
 
- <script src="../04-scripts/13-todo-list.js"></script>  
-</body>
+         <button  class="add-btn">Add</button>
+      </div>
+      <div class="js-todo-div btn todo-div"></div>
+
+      <script src="../04-scripts/13-todo-list.js"></script>
+   </body>
+
 </html>

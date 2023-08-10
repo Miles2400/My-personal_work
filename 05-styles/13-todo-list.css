@@ -1,0 +1,35 @@
+body{
+   font-family: Arial, Helvetica, sans-serif;
+}
+.todo-div , .div {
+   display: grid;
+   grid-template-columns: 200px 150px 100px;
+   column-gap: 10px;
+   row-gap: 10px;
+   align-items: center;
+}
+.div{
+   margin-bottom: 10px;
+   align-items: stretch;
+}
+.input1 , .input2{
+   font-size: 15px;
+   padding:6px ;
+   border-radius: 5px;
+}
+.add-btn{
+   background-color: rgb(14, 180, 14);
+   color: white;
+   border: none;
+   font-size: 15px;
+   cursor: pointer;
+   border-radius: 5px;
+}
+.del-btn{
+   background-color: rgb(185, 9, 9);
+   color: white;
+   border: none;
+   font-size: 15px;
+   padding: 10px;
+   border-radius: 5px;
+}

@@ -1,7 +1,9 @@
-let calculation = localStorage.getItem("store");
+let calculation = '';
 function updatecalculation(sum) {
-   calculation += sum;
+   calculation += sum
    document.querySelector(".total").innerHTML = calculation;
 }
-
-localStorage.setItem("store", calculation);
+document.querySelector(".clear-btn").addEventListener( "click", () =>  {
+   document.querySelector('.total').innerHTML = calculation = 0;
+   document.querySelector('.prag').innerHTML = '';
+})

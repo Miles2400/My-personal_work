@@ -1,135 +1,71 @@
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>calculation</title>
-        <link rel="stylesheet" href="../05-styles/06-exe.css">
-    </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>calculation</title>
+		<link rel="stylesheet" href="../05-styles/06-exe.css" />
+	</head>
 
-    <body>
-        <div class="btn">
-            <p class="p1">
-                <button onclick="
-    updatecalculation(1)
-        ">
-                    1
-                </button>
+	<body>
+		<div class="btn">
+			<p class="p1">
+				<button onclick="updatecalculation(1)"> 1 </button>
 
-                <button onclick="
-    updatecalculation(2);
-     ">
-                    2
-                </button>
+				<button onclick="updatecalculation(2);"> 2 </button>
 
-                <button onclick="
-   updatecalculation(3)
-     ">
-                    3
-                </button>
+				<button onclick="updatecalculation(3)"> 3 </button>
 
-                <button class="operatorbtn" onclick="
- updatecalculation('+');
-   ">
-                    +
-                </button>
-            </p>
+				<button class="operatorbtn" onclick="updatecalculation('+');"> + </button>
+			</p>
 
-            <p class="p1">
-                <button onclick="
-  updatecalculation(4)
-     ">
-                    4
-                </button>
+			<p class="p1">
+				<button onclick="updatecalculation(4)"> 4 </button>
 
-                <button onclick="
-    updatecalculation(5);
-     ">
-                    5
-                </button>
+				<button onclick="updatecalculation(5);"> 5 </button>
 
-                <button onclick="
-    updatecalculation(6);
-     ">
-                    6
-                </button>
+				<button onclick="updatecalculation(6);"> 6 </button>
 
-                <button onclick="
-            updatecalculation('-')" class="operatorbtn">
-                    -
-                </button>
+				<button onclick="updatecalculation('-')" class="operatorbtn">-</button>
+			</p>
 
-            </p>
+			<p class="p1">
+				<button onclick="updatecalculation(7);"> 7 </button>
 
-            <p class="p1">
-                <button onclick="
-   updatecalculation(7);
-     ">
-                    7
-                </button>
+				<button onclick="updatecalculation(8);"> 8 </button>
 
-                <button onclick="
-    updatecalculation(8);
-     ">
-                    8
-                </button>
+				<button onclick=" updatecalculation(9);"> 9 </button>
 
-                <button onclick="
-    updatecalculation(9);
-     ">
-                    9
-                </button>
+				<button onclick="updatecalculation('*')" class="operatorbtn">*</button>
+			</p>
 
-                <button onclick="
-            updatecalculation('*')" class="operatorbtn">
-                    *
-                </button>
-            </p>
+			<p class="p1">
+				<button onclick="updatecalculation(0)"> 0 </button>
 
-            <p class="p1">
-                <button onclick="
-            updatecalculation(0)">
-                    0
-                </button>
+				<button onclick="updatecalculation('.')">.</button>
 
-                <button onclick="
-            updatecalculation('.')">
-                    .
-                </button>
-
-                <button onclick="
+				<button onclick="
     calculation = eval(calculation)
    document.querySelector('.prag').innerHTML =  (calculation);
     ">
-                    =
-                </button>
+					=
+				</button>
 
-                <button onclick="
-            updatecalculation('/')" class="operatorbtn">
-                    /
-                </button>
-            </p>
+				<button onclick="updatecalculation('/')" class="operatorbtn">/</button>
+			</p>
 
-            <p class="p1">
+			<p class="p1">
+				<button class="clear-btn">Clear</button>
+			</p>
 
-                <button onclick="
-     document.querySelector('.total').innerHTML = calculation = 0;
-       document.querySelector('.prag').innerHTML = '';
-    ">
-                    Clear
-                </button>
-            </p>
+			<div class="p">
+				<p class="total"></p>
+				<p class="prag"></p>
+			</div>
+			
+		</div>
 
-            <div class="p">
-                <p class="total"></p>
-                <p class="prag"></p>
-            </div>
-        </div>
-
-
-
-        <script src="../04-scripts/06-exe.js"></script>
-
-    </body>
+		<script src="../04-scripts/06-exe.js"></script>
+	</body>
 
 </html>

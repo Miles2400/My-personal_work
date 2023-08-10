@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+
+   <body>
+      <script>
+         /*
+         let myarr = [10,20,30];
+   
+         myarr[2] = 99;
+         console.log(myarr)
+   */
+         /*
+            getLastValue([2,3,4,7])
+         
+               function getLastValue(array){
+                array = array[array.length -1]
+                     console.log(array)
+               }
+               */
+
+         /*
+               function arraySwap(myarr){
+                  let lastValue = myarr[myarr.length -1];
+                  let firstValue = myarr[0];
+         
+                  myarr[0] = lastValue;
+                  myarr[myarr.length -1] = firstValue;
+         
+               return (myarr)
+               };
+               console.log(arraySwap(['hi','hello']))
+               */
+         /*
+               let n = 0;
+         
+               while(n <= 20){
+                  console.log(n);
+                  n+=5
+               } 
+         */
+         /*
+         let myarr = [1,2,3];
+         let arr =[]
+         for (i =0; i < myarr.length;i++){
+            arr.push(myarr[i]+1)
+         }
+         console.log(arr)
+         */
+
+         /*
+         myarr = [1,2,3]
+          addOne(myarr);
+         
+         function addOne(arr){
+         for (i = 0;i < arr.length;i++){
+          arr[i] = arr[i]+1
+         }
+         console.log(arr);
+         return arr;
+         }
+         */
+
+         /*
+         addNum([1,2,3],10)
+         function addNum(arr, num){
+            for(i = 0;i < arr.length;i++){
+               arr[i] = arr[i]+num;
+            }
+            console.log(arr);
+            return arr;
+         }
+*/
+
+         console.log(addArray([1, 2, 3], [1, 2, 3]));
+
+         function addArray(arr1, arr2) {
+            for (i = 0; i < arr1.length; i++)
+               for (n = 0; n < arr2.length; n++) return arr1[i] + arr2[n];
+         }
+      </script>
+   </body>
+
+</html>
